@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ChangeInfoActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red_secondary">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="end"
+                android:gravity="center"
+                android:id="@+id/back"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/back_action"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:fontFamily="@font/typo_graphica"
+                android:layout_marginTop="10dp"
+                android:textSize="30dp"
+                android:text="@string/app_name"
+                android:textColor="@color/red_primary"/>
+        </RelativeLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/typo_graphica"
+            android:gravity="center"
+            android:text="@string/changeInfo"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/changeName"
+            android:layout_width="276dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_edittext"
+            android:gravity="center"
+            android:hint="@string/Name" />
+
+        <EditText
+            android:id="@+id/changeSurname"
+            android:layout_width="276dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/rounded_edittext"
+            android:gravity="center"
+            android:hint="@string/surname" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/typo_graphica"
+                android:text="@string/submit"
+                android:layout_marginRight="10dp"/>
+
+            <Button
+                android:id="@+id/resetPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/typo_graphica"
+                android:text="@string/resetPassword" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>
+
+

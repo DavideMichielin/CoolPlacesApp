@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "253837087371",
+    "firebase_url": "https://appandroid-54ba9-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "appandroid-54ba9",
+    "storage_bucket": "appandroid-54ba9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:253837087371:android:4eceefa06ff00f36297a8e",
+        "android_client_info": {
+          "package_name": "it.units.placesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "253837087371-95p3bh80bcj92pfjd2nhue949ejoiloh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCm1DEgRNK3bASN1wUgNz-Da1sAojmJ1TM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "253837087371-95p3bh80bcj92pfjd2nhue949ejoiloh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
