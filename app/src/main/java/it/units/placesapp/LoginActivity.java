@@ -29,21 +29,12 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         auth = FirebaseAuth.getInstance();
 
-
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-            Intent intent = new Intent(LoginActivity.this, MapsActivity.class);
-            startActivity(intent);
-            finish();
-        }
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
-
         setContentView(binding.getRoot());
 
         String text = binding.registration.getText().toString();
 
         SpannableString ss = new SpannableString(text);
-
         ClickableSpan cs = new ClickableSpan() {
             @Override
             public void onClick(@NonNull View widget) {
@@ -51,27 +42,23 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         };
-        String language = Locale.getDefault().getDisplayLanguage();
         if (Locale.getDefault().getDisplayLanguage().equals("italiano")) {
             ss.setSpan(cs, 27, 37, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         } else {
             ss.setSpan(cs, 20, 27, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
 
-
         binding.registration.setText(ss);
         binding.registration.setMovementMethod(LinkMovementMethod.getInstance());
-
         binding.login.setOnClickListener(loginListener);
     }
 
     View.OnClickListener loginListener = v -> {
         final String email = binding.email.getText().toString();
         final String password = binding.password.getText().toString();
-        if(email.isEmpty() || password.isEmpty()){
+        if (email.isEmpty() || password.isEmpty()) {
             Toast.makeText(LoginActivity.this, R.string.completeAllField, Toast.LENGTH_LONG).show();
-        }
-        else {
+        } else {
             auth.signInWithEmailAndPassword(email, password).addOnSuccessListener(LoginActivity.this, authResult -> {
                 Intent intent = new Intent(LoginActivity.this, MapsActivity.class);
                 startActivity(intent);

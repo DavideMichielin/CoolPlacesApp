@@ -1,6 +1,5 @@
 package it.units.placesapp;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -26,10 +25,9 @@ public class UploadImageActivity extends AppCompatActivity {
     FirebaseStorage storage;
     DatabaseReference referenceDatabase = FirebaseDatabase.getInstance().getReference().child("monuments");
     Uri imageUri;
-
     double latitude;
     double longitude;
-    String name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,16 +40,11 @@ public class UploadImageActivity extends AppCompatActivity {
         longitude = getIntent().getDoubleExtra("longitude", 0);
 
         binding.back.setOnClickListener(backButtonListener);
-
         binding.chooseImage.setOnClickListener(v -> mGetContent.launch("image/*"));
-
         binding.uploadImage.setOnClickListener(v -> uploadImage());
     }
 
-
-    View.OnClickListener backButtonListener = v -> {
-        finish();
-    };
+    View.OnClickListener backButtonListener = v -> finish();
 
 
     ActivityResultLauncher<String> mGetContent = registerForActivityResult(new ActivityResultContracts.GetContent(), new ActivityResultCallback<Uri>() {
@@ -66,9 +59,7 @@ public class UploadImageActivity extends AppCompatActivity {
 
     private void uploadImage() {
         if (imageUri != null) {
-
             StorageReference reference = storage.getReference().child("images/" + latitude + "_" + longitude + "/" + imageUri.getLastPathSegment());
-
             reference.putFile(imageUri).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
                     reference.getDownloadUrl().addOnSuccessListener(uri -> {

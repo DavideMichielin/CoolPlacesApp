@@ -9,6 +9,7 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -51,16 +52,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         setContentView(binding.getRoot());
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
+        binding.profile.setOnClickListener(profileListener);
+
         fetchLastLocation();
-        binding.profile.setOnClickListener(v -> {
-            if (FirebaseAuth.getInstance().getCurrentUser() == null) {
-                Intent intent = new Intent(MapsActivity.this, LoginActivity.class);
-                startActivity(intent);
-            } else {
-                Intent intent = new Intent(MapsActivity.this, AccountActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     private void fetchLastLocation() {
@@ -137,9 +131,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if (requestCode == REQUEST_CODE) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 fetchLastLocation();
-            } else if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_DENIED){
+            } else if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_DENIED) {
                 Toast.makeText(MapsActivity.this, R.string.noLocationAllowed, Toast.LENGTH_LONG).show();
             }
         }
     }
+
+    View.OnClickListener profileListener = v -> {
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+            Intent intent = new Intent(MapsActivity.this, LoginActivity.class);
+            startActivity(intent);
+        } else {
+            Intent intent = new Intent(MapsActivity.this, AccountActivity.class);
+            startActivity(intent);
+        }
+    };
 }

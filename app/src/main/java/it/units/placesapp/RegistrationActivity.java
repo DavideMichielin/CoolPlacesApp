@@ -64,7 +64,6 @@ public class RegistrationActivity extends AppCompatActivity {
 
             }).addOnFailureListener(RegistrationActivity.this, e -> Toast.makeText(RegistrationActivity.this, e.getMessage(), Toast.LENGTH_LONG).show());
         }
-        ;
     };
 
     private boolean checkField(String email, String password, String name, String surname) {

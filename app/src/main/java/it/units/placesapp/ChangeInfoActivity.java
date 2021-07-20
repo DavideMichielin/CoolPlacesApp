@@ -1,6 +1,5 @@
 package it.units.placesapp;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -18,8 +17,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Objects;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import it.units.placesapp.databinding.ActivityChangeInfoBinding;
 
@@ -35,9 +32,9 @@ public class ChangeInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityChangeInfoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
         binding.submit.setOnClickListener(submitChange);
         binding.resetPassword.setOnClickListener(changePassword);
-
         binding.back.setOnClickListener(backListener);
     }
 
@@ -96,9 +93,7 @@ public class ChangeInfoActivity extends AppCompatActivity {
         passwordResetDialog.show();
     };
 
-    View.OnClickListener backListener = v -> {
-        finish();
-    };
+    View.OnClickListener backListener = v -> finish();
 
     private void changeName(String name) {
         ref.child("users").child(user.getUid()).child("name").setValue(name);

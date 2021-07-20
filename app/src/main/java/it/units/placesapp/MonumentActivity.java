@@ -129,9 +129,7 @@ public class MonumentActivity extends AppCompatActivity {
         }
     };
 
-    View.OnClickListener backButtonListener = v -> {
-        finish();
-    };
+    View.OnClickListener backButtonListener = v -> finish();
 
     View.OnClickListener uploadImageListener = v -> {
         Intent intent = new Intent(MonumentActivity.this, UploadImageActivity.class);
