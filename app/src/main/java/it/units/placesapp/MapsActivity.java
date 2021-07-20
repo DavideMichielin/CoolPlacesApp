@@ -43,6 +43,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private static final int REQUEST_CODE = 101;
     float mZoom;
     GoogleMap gMap;
+    LatLng latLngFixed;
     LatLng latLng;
 
     @Override
@@ -78,19 +79,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         gMap = googleMap;
         gMap.setMinZoomPreference(7);
         gMap.setMaxZoomPreference(20);
+        latLngFixed = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
         latLng = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
         mZoom = 13.2f;
-
         gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, mZoom));
         showAllNearPlace(gMap, currentLocation.getLatitude(), currentLocation.getLongitude(), mZoom);
 
+
         gMap.setOnMarkerClickListener(marker -> {
-            Intent intent = new Intent(MapsActivity.this, MonumentActivity.class);
-            intent.putExtra("monumentName", marker.getTitle());
-            intent.putExtra("latitude", marker.getPosition().latitude);
-            intent.putExtra("longitude", marker.getPosition().longitude);
-            startActivity(intent);
-            return false;
+            if(marker.getTitle().equals(getResources().getString(R.string.uAreHere))){
+                return true;
+            } else {
+                Intent intent = new Intent(MapsActivity.this, MonumentActivity.class);
+                intent.putExtra("monumentName", marker.getTitle());
+                intent.putExtra("latitude", marker.getPosition().latitude);
+                intent.putExtra("longitude", marker.getPosition().longitude);
+                startActivity(intent);
+                return false;
+            }
         });
 
         gMap.setOnCameraIdleListener(() -> {
@@ -113,6 +119,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             LatLng latLng = new LatLng(m.getLatitude(), m.getLongitude());
             gmap.addMarker(new MarkerOptions().title(m.getName()).position(latLng).icon(bitmapDescriptorFromVector(getApplicationContext(), R.drawable.ic_baseline_place_24)));
         }
+        gmap.addMarker(new MarkerOptions().title(getResources().getString(R.string.uAreHere)).position(latLngFixed).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
         databaseAccess.close();
     }
 
