@@ -3,7 +3,6 @@ package it.units.placesapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
 import androidx.annotation.NonNull;
@@ -24,7 +23,6 @@ import utils.Monument;
 
 public class AccountActivity extends AppCompatActivity {
     private ActivityAccountBinding binding;
-    private DatabaseReference mDatabase;
     private FirebaseAuth firebaseAuth;
     FirebaseUser user;
 
@@ -33,25 +31,27 @@ public class AccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityAccountBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        firebaseAuth =FirebaseAuth.getInstance();
         binding.back.setOnClickListener(backButtonListener);
         binding.changeInformation.setOnClickListener(changeInformationListener);
         binding.logoutButton.setOnClickListener(logoutListener);
-
-
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        ArrayList<Monument> monuments = new ArrayList<>();
-        firebaseAuth =FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
         String uid = user.getUid();
-        mDatabase = FirebaseDatabase.getInstance().getReference("users");
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("users");
+        getInfoUser(uid,mDatabase);
+        getFavoriteMonuments(uid, mDatabase);
+    }
+
+    private void getInfoUser(String uid, DatabaseReference mDatabase) {
+
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String userName = dataSnapshot.child(uid).child("name").getValue(String.class);
                 String userSurname = dataSnapshot.child(uid).child("surname").getValue(String.class);
                 String email = dataSnapshot.child(uid).child("email").getValue(String.class);
@@ -64,8 +64,13 @@ public class AccountActivity extends AppCompatActivity {
 
             }
         });
+
+    }
+
+    private void getFavoriteMonuments(String uid, DatabaseReference mDatabase) {
+        ArrayList<Monument> monuments = new ArrayList<>();
         mDatabase = mDatabase.child(uid).child("favorite");
-        ArrayAdapter<Monument> monumentArrayAdapter = new ArrayAdapter<Monument>(AccountActivity.this, R.layout.list_item, R.id.monumentName, monuments);
+        ArrayAdapter<Monument> monumentArrayAdapter = new ArrayAdapter<>(AccountActivity.this, R.layout.list_item, R.id.monumentName, monuments);
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -101,9 +106,7 @@ public class AccountActivity extends AppCompatActivity {
         finish();
     };
 
-    View.OnClickListener backButtonListener = v -> {
-        finish();
-    };
+    View.OnClickListener backButtonListener = v -> finish();
 
     View.OnClickListener changeInformationListener = v -> {
         Intent intent = new Intent(AccountActivity.this, ChangeInfoActivity.class);
