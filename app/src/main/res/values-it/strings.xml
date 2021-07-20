@@ -22,7 +22,7 @@
     <string name="emptyList">Non hai ancora dei preferiti!</string>
     <string name="completeAllField">Completa tutti i campi</string>
     <string name="passwordReset">Cambia la tua password</string>
-    <string name="imageUploaded">Immagini caricata</string>
+    <string name="imageUploaded">Immagine caricata</string>
     <string name="errorImageUpload">Immagine non caricata</string>
     <string name="selectAImage">Seleziona un\'immagine da caricare</string>
     <string name="addFavourite">Monumento aggiunto ai preferiti</string>
@@ -30,4 +30,7 @@
     <string name="atLeastOne">Devi compilare almeno un campo</string>
     <string name="upload">Carica</string>
     <string name="chooseImage">Scegli</string>
+    <string name="uAreHere">Tu sei qui</string>
+    <string name="passwordUpdated">Password aggiornata</string>
+    <string name="wrongPassword">Password errata. Riprovare.</string>
 </resources>

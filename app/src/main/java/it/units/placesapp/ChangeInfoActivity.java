@@ -73,7 +73,7 @@ public class ChangeInfoActivity extends AppCompatActivity {
             String verify = oldPassword.getText().toString();
             String password = newPassword.getText().toString();
             if (password.length() < 6) {
-                Toast.makeText(ChangeInfoActivity.this, "New Password must have >= 6 characters ", Toast.LENGTH_LONG).show();
+                Toast.makeText(ChangeInfoActivity.this, R.string.shortPassword, Toast.LENGTH_LONG).show();
             } else {
                 AuthCredential authCredential = EmailAuthProvider.getCredential(Objects.requireNonNull(user.getEmail()), verify);
                 user.reauthenticate(authCredential).addOnCompleteListener(task -> {
@@ -81,11 +81,11 @@ public class ChangeInfoActivity extends AppCompatActivity {
                         user.updatePassword(password)
                                 .addOnCompleteListener(task1 -> {
                                     if (task1.isSuccessful()) {
-                                        Toast.makeText(ChangeInfoActivity.this, "Password Updated", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(ChangeInfoActivity.this, R.string.passwordUpdated, Toast.LENGTH_LONG).show();
                                     }
                                 });
                     } else {
-                        Toast.makeText(ChangeInfoActivity.this, "Are u sure about the old password? ", Toast.LENGTH_LONG).show();
+                        Toast.makeText(ChangeInfoActivity.this, R.string.wrongPassword, Toast.LENGTH_LONG).show();
                     }
                 });
             }

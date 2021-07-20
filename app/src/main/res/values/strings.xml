@@ -34,4 +34,6 @@
     <string name="surnameUpdated">Surname Updated</string>
     <string name="noLocationAllowed">Enable location in the settings of the device</string>
     <string name="uAreHere">You are here</string>
+    <string name="passwordUpdated">Password Updated</string>
+    <string name="wrongPassword">Wrong old password. Please retry</string>
 </resources>

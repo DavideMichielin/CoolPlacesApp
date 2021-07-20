@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(LoginActivity.this, MapsActivity.class);
                 startActivity(intent);
                 finish();
-            }).addOnFailureListener(e -> Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_LONG).show());
+            }).addOnFailureListener(e -> Toast.makeText(LoginActivity.this, R.string.signInError, Toast.LENGTH_LONG).show());
         }
     };
 }
