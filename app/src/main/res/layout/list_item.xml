@@ -9,7 +9,7 @@
         android:gravity="center_horizontal"
         android:id="@+id/monumentName"
         android:textSize="15dp"
-        android:fontFamily="@font/typo_graphica"
+        android:fontFamily="@font/varela_round"
         android:textColor="@color/black"/>
 
 </LinearLayout>

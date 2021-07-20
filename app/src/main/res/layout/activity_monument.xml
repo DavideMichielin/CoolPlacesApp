@@ -10,7 +10,7 @@
         android:id="@+id/appbarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/red_secondary">
+        android:background="@color/blue_secondary">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -38,7 +38,7 @@
                 android:layout_marginTop="10dp"
                 android:textSize="30dp"
                 android:text="@string/app_name"
-                android:textColor="@color/red_primary"/>
+                android:textColor="@color/white"/>
         </RelativeLayout>
 
 
@@ -57,7 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:iss_title_background="@android:color/transparent"
-                android:background="@drawable/monument_icons"
+                android:background="@drawable/monuments_icons"
                 />
 
             <ImageButton
@@ -69,7 +69,7 @@
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/round_button"
-                app:srcCompat="@drawable/upload_icons" />
+                app:srcCompat="@drawable/add_image_icons" />
 
             <ImageButton
                 android:id="@+id/likeButton"
@@ -99,8 +99,9 @@
             android:layout_height="match_parent"
             android:textStyle="italic"
             android:gravity="center_horizontal"
-            android:textSize="30dp"
+            android:textSize="28dp"
             android:id="@+id/nameMonument"
+            android:fontFamily="@font/varela_round"
             android:textColor="@color/black"
             android:layout_marginTop="20dp"/>
     </LinearLayout>

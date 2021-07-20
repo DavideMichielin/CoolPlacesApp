@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/registration"
-        android:textColor="@color/red_primary"
+        android:textColor="@color/blu_primary"
         android:gravity="center"
         android:id="@+id/registration"
         android:layout_marginTop="20dp"

@@ -1,13 +1,10 @@
 <resources>
     <string name="app_name">CoolPlaces</string>
-    <string name="creator">Creator</string>
-    <string name="users">Users</string>
-    <string name="login">Login</string>
+    <string name="login" translatable="false">Login</string>
     <string name="signInError">Sign In Error</string>
     <string name="createUser">Create User</string>
-    <string name="isCreator">Creator</string>
     <string name="fieldEmpty">Complete all the fields</string>
-    <string name="shortPassword">Password must be at least 5 characters</string>
+    <string name="shortPassword">Password must be at least 6 characters</string>
     <string name="registration">Not registered yet? SIGN UP </string>
     <string name="profile">Profile </string>
     <string name="map_key" translatable="false">AIzaSyAdXIYDNLZaVpDtXyHJ1yrDVVE6fECtarA</string>
@@ -23,18 +20,16 @@
     <string name="selectAImage">Select an image to upload</string>
     <string name="addFavourite">Monument added to your favourite</string>
     <string name="yourFavorite">Your favorite monuments</string>
-    <string name="logout">LOGOUT</string>
+    <string name="logout" translatable="false">LOGOUT</string>
     <string name="completeAllField">Complete all field</string>
     <string name="emptyList">You don\'t have favorite yet!</string>
-    <string name="resetPassword">Reset Password</string>
+    <string name="resetPassword" translatable="false">Reset Password</string>
     <string name="passwordReset">Reset your password</string>
     <string name="insertPassword6Character">New password must have > 6 characters!</string>
     <string name="change">Change Password</string>
     <string name="oldPassword">Old Password</string>
     <string name="newPassword">New Password</string>
     <string name="removeFavorite">Removed place from your favorite</string>
-    <string name="emailUpdated">Email updated</string>
-    <string name="emailPatternWrong">Insert a valid email</string>
     <string name="nameUpdated">Name updated</string>
     <string name="surnameUpdated">Surname Updated</string>
     <string name="noLocationAllowed">Enable location in the settings of the device</string>

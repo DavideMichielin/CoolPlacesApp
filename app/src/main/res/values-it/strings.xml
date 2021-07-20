@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CoolPlaces</string>
+    <string name="signInError">Errore di accesso</string>
+    <string name="createUser">Crea Utente</string>
+    <string name="changeInfo">Cambia le informazioni del tuo account</string>
+    <string name="surname">Cognome</string>
+    <string name="Name">Nome</string>
+    <string name="profile">Profilo</string>
+    <string name="shortPassword">La password deve essere di almeno 6 caratteri</string>
+    <string name="fieldEmpty">Completa tutti i campi</string>
+    <string name="registration">Non sei ancora registrato? Registrati</string>
+    <string name="nameUpdated">Nome aggiornato</string>
+    <string name="surnameUpdated">Cognome aggiornato</string>
+    <string name="yourFavorite">I tuoi monumenti preferiti</string>
+    <string name="oldPassword">Vecchia password</string>
+    <string name="newPassword">Nuova password</string>
+    <string name="removeFavorite">Monumento rimosso dai tuoi preferiti</string>
+    <string name="noLocationAllowed">Abilita la posizione nelle impostazioni</string>
+    <string name="change">Cambio password</string>
+    <string name="insertPassword6Character">La nuova password deve avere > 6 caratteri</string>
+    <string name="emptyList">Non hai ancora dei preferiti!</string>
+    <string name="completeAllField">Completa tutti i campi</string>
+    <string name="passwordReset">Cambia la tua password</string>
+    <string name="imageUploaded">Immagini caricata</string>
+    <string name="errorImageUpload">Immagine non caricata</string>
+    <string name="selectAImage">Seleziona un\'immagine da caricare</string>
+    <string name="addFavourite">Monumento aggiunto ai preferiti</string>
+    <string name="submit">Invia</string>
+    <string name="atLeastOne">Devi compilare almeno un campo</string>
+    <string name="upload">Carica</string>
+    <string name="chooseImage">Scegli</string>
+</resources>

@@ -16,7 +16,7 @@
             android:id="@+id/appbarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/red_secondary">
+            android:background="@color/blue_secondary">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -33,9 +33,9 @@
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/typo_graphica"
                     android:gravity="center_horizontal"
-                    android:text="CoolPlace"
+                    android:text="@string/app_name"
                     android:textSize="30dp"
-                    android:textColor="@color/red_primary"/>
+                    android:textColor="@color/white"/>
 
                 <Button
                     android:layout_width="40dp"
@@ -50,7 +50,6 @@
 
                      />
             </RelativeLayout>
-
 
         </com.google.android.material.appbar.AppBarLayout>
     </fragment>

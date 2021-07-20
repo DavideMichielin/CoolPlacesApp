@@ -10,7 +10,7 @@
     android:id="@+id/appbarLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/red_secondary">
+    android:background="@color/blue_secondary">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -38,7 +38,7 @@
             android:layout_marginTop="10dp"
             android:textSize="30dp"
             android:text="@string/app_name"
-            android:textColor="@color/red_primary"/>
+            android:textColor="@color/white"/>
     </RelativeLayout>
 
 
@@ -56,7 +56,7 @@
                 android:layout_height="match_parent"
                 android:scaleType="fitXY"
                 android:id="@+id/imageMonument"
-                android:src="@drawable/add_image_icons"
+                android:src="@drawable/upload_icons"
                 />
 
 

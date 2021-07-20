@@ -51,8 +51,9 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         };
-        if (Locale.getDefault().getDisplayLanguage() == "Italiano") {
-            ss.setSpan(cs, 28, 37, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        String language = Locale.getDefault().getDisplayLanguage();
+        if (Locale.getDefault().getDisplayLanguage().equals("italiano")) {
+            ss.setSpan(cs, 27, 37, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         } else {
             ss.setSpan(cs, 20, 27, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
