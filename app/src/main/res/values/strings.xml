@@ -36,4 +36,7 @@
     <string name="uAreHere">You are here</string>
     <string name="passwordUpdated">Password Updated</string>
     <string name="wrongPassword">Wrong old password. Please retry</string>
+    <string name="insertReview">Insert your review for this monument</string>
+    <string name="emptyNotAllowed">Empty review are not allowed</string>
+    <string name="emptyListReview">No review yet! Write once!</string>
 </resources>

@@ -72,6 +72,17 @@
                 app:srcCompat="@drawable/add_image_icons" />
 
             <ImageButton
+                android:id="@+id/uploadReview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/round_button"
+                app:srcCompat="@drawable/new_review_icons" />
+
+            <ImageButton
                 android:id="@+id/likeButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -92,11 +103,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="0.4"
         >
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:textStyle="italic"
             android:gravity="center_horizontal"
             android:textSize="28dp"
@@ -104,6 +115,31 @@
             android:fontFamily="@font/varela_round"
             android:textColor="@color/black"
             android:layout_marginTop="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp">
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/listview"
+                tools:listitem="@layout/list_item"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/empty"
+                android:fontFamily="@font/varela_round"
+                android:gravity="center_horizontal"
+                android:text="@string/emptyListReview"/>
+        </LinearLayout>
     </LinearLayout>
 
 

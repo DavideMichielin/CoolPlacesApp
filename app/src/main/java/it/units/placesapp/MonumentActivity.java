@@ -3,6 +3,7 @@ package it.units.placesapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -25,6 +26,7 @@ import java.util.List;
 
 import it.units.placesapp.databinding.ActivityMonumentBinding;
 import utils.MonumentImageHandler;
+import utils.Review;
 
 
 public class MonumentActivity extends AppCompatActivity {
@@ -46,11 +48,13 @@ public class MonumentActivity extends AppCompatActivity {
         binding.back.setOnClickListener(backButtonListener);
         binding.uploadImage.setOnClickListener(uploadImageListener);
         binding.likeButton.setOnClickListener(addOrRemoveMonumentFromFavourite);
-
+        binding.uploadReview.setOnClickListener(newReview);
         name = getIntent().getStringExtra("monumentName");
         latitudeD = getIntent().getDoubleExtra("latitude", 0);
         longitudeD = getIntent().getDoubleExtra("longitude", 0);
-
+        latitude = Double.toString(latitudeD).replace(".", "");
+        longitude = Double.toString(longitudeD).replace(".", "");
+        getReview();
 
     }
 
@@ -62,14 +66,14 @@ public class MonumentActivity extends AppCompatActivity {
         if (user == null) {
             binding.likeButton.setVisibility(View.GONE);
             binding.uploadImage.setVisibility(View.GONE);
+            binding.uploadReview.setVisibility(View.GONE);
         } else {
             uid = user.getUid();
             checkIfMonumentsIsPrefer(name);
         }
-        latitude = Double.toString(latitudeD).replace(".", "");
-        longitude = Double.toString(longitudeD).replace(".", "");
 
         showImageMonument(latitude, longitude);
+
 
     }
 
@@ -99,7 +103,7 @@ public class MonumentActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     MonumentImageHandler m = dataSnapshot.getValue(MonumentImageHandler.class);
-                    slider.add(new SlideModel(m.getImageUrl(), "", ScaleTypes.FIT));
+                    slider.add(new SlideModel(m.getImageUrl(), "", ScaleTypes.CENTER_INSIDE));
                 }
                 binding.imageMonument.setImageList(slider, ScaleTypes.FIT);
             }
@@ -108,6 +112,30 @@ public class MonumentActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
+        });
+    }
+
+    private void getReview() {
+
+        DatabaseReference reviewRef = rootRef.child("review").child(latitude + "_" + longitude);
+        reviewRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ArrayList<Review> reviews = new ArrayList<>();
+                for (DataSnapshot ds : snapshot.getChildren()) {
+                    Review m = ds.getValue(Review.class);
+                    reviews.add(m);
+                }
+                ArrayAdapter reviewAdapter = new ArrayAdapter(MonumentActivity.this, R.layout.list_item_review, R.id.review, reviews);
+                binding.listview.setAdapter(reviewAdapter);
+                binding.listview.setEmptyView(binding.empty);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+
         });
     }
 
@@ -129,11 +157,18 @@ public class MonumentActivity extends AppCompatActivity {
         }
     };
 
+    View.OnClickListener newReview = v -> {
+        Intent intent = new Intent(MonumentActivity.this, UploadReviewActivity.class);
+        intent.putExtra("latitude", latitudeD);
+        intent.putExtra("longitude", longitudeD);
+        startActivity(intent);
+    };
+
+
     View.OnClickListener backButtonListener = v -> finish();
 
     View.OnClickListener uploadImageListener = v -> {
         Intent intent = new Intent(MonumentActivity.this, UploadImageActivity.class);
-        intent.putExtra("monumentName", name);
         intent.putExtra("latitude", latitudeD);
         intent.putExtra("longitude", longitudeD);
         startActivity(intent);

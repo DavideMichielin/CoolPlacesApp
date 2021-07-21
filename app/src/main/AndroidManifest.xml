@@ -13,29 +13,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Placesapp">
-        <activity android:name=".UploadImageActivity"></activity>
+        <activity android:name=".UploadReviewActivity"></activity>
+        <activity android:name=".UploadImageActivity" />
         <activity android:name=".ChangeInfoActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_key" />
 
-        <activity android:name=".MonumentActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".AccountActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".RegistrationActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".MonumentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AccountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RegistrationActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MapsActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
