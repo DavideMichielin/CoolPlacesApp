@@ -119,7 +119,8 @@ public class MonumentActivity extends AppCompatActivity {
     }
 
     private void getReview() {
-
+        binding.progressLayout.setVisibility(View.VISIBLE);
+        binding.containerLayout.setAlpha(0.4f);
         DatabaseReference reviewRef = rootRef.child("review").child(latitude + "_" + longitude);
         reviewRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -132,6 +133,8 @@ public class MonumentActivity extends AppCompatActivity {
                 ArrayAdapter reviewAdapter = new ArrayAdapter(MonumentActivity.this, R.layout.list_item_review, R.id.review, reviews);
                 binding.listview.setAdapter(reviewAdapter);
                 binding.listview.setEmptyView(binding.empty);
+                binding.progressLayout.setVisibility(View.GONE);
+                binding.containerLayout.setAlpha(1f);
             }
 
             @Override

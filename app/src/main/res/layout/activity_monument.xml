@@ -1,145 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AccountActivity"
-    android:orientation="vertical">
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/blue_secondary">
+    android:gravity="center"
+    android:layout_gravity="center">
 
-        <RelativeLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".AccountActivity"
+        android:id="@+id/containerLayout">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
+            android:background="@color/blue_secondary">
 
-            <Button
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_gravity="end"
-                android:gravity="center"
-                android:id="@+id/back"
-                android:layout_marginRight="5dp"
-                android:background="@drawable/back_action"
-
-                />
-
-            <TextView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:fontFamily="@font/typo_graphica"
-                android:layout_marginTop="10dp"
-                android:textSize="30dp"
-                android:text="@string/app_name"
-                android:textColor="@color/white"/>
-        </RelativeLayout>
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/back"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="end"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/back_action"
+                    android:gravity="center"
+
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/typo_graphica"
+                    android:gravity="center_horizontal"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"
+                    android:textSize="30dp" />
+            </RelativeLayout>
 
 
-    </com.google.android.material.appbar.AppBarLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:orientation="vertical">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        </com.google.android.material.appbar.AppBarLayout>
 
-            <com.denzcoskun.imageslider.ImageSlider
-                android:id="@+id/imageMonument"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:iss_title_background="@android:color/transparent"
-                />
-
-            <ImageButton
-                android:id="@+id/uploadImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/round_button"
-                app:srcCompat="@drawable/add_image_icons" />
-
-            <ImageButton
-                android:id="@+id/uploadReview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="5dp"
-                android:background="@drawable/round_button"
-                app:srcCompat="@drawable/new_review_icons" />
-
-            <ImageButton
-                android:id="@+id/likeButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
-                android:background="@drawable/round_button"
-                app:srcCompat="@android:drawable/btn_star" />
-
-
-        </RelativeLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.7"
-        >
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="italic"
-            android:gravity="center_horizontal"
-            android:textSize="25dp"
-            android:id="@+id/nameMonument"
-            android:fontFamily="@font/varela_round"
-            android:textColor="@color/black"
-            android:layout_marginTop="20dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginTop="5dp">
-            <ListView
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/listview"
-                tools:listitem="@layout/list_item"
-                />
+                android:layout_height="match_parent">
+
+                <com.denzcoskun.imageslider.ImageSlider
+                    android:id="@+id/imageMonument"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:iss_title_background="@android:color/transparent" />
+
+                <ImageButton
+                    android:id="@+id/uploadImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/round_button"
+                    app:srcCompat="@drawable/add_image_icons" />
+
+                <ImageButton
+                    android:id="@+id/uploadReview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/round_button"
+                    app:srcCompat="@drawable/new_review_icons" />
+
+                <ImageButton
+                    android:id="@+id/likeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/round_button"
+                    app:srcCompat="@android:drawable/btn_star" />
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.7">
+
             <TextView
+                android:id="@+id/nameMonument"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/empty"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/varela_round"
                 android:gravity="center_horizontal"
-                android:text="@string/emptyListReview"/>
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="italic" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1">
+
+                <ListView
+                    android:id="@+id/listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/list_item" />
+
+                <TextView
+                    android:id="@+id/empty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/varela_round"
+                    android:gravity="center_horizontal"
+                    android:text="@string/emptyListReview" />
+            </LinearLayout>
+        </LinearLayout>
+
+
     </LinearLayout>
-
-
-</LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/progressLayout">
+        <ProgressBar
+            android:id="@+id/pbHeaderProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+</RelativeLayout>
