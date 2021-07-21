@@ -48,7 +48,7 @@ public class AccountActivity extends AppCompatActivity {
     }
 
     private void getInfoUser(String uid, DatabaseReference mDatabase) {
-
+        binding.progressLayout.setVisibility(View.VISIBLE);
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -57,6 +57,7 @@ public class AccountActivity extends AppCompatActivity {
                 String email = dataSnapshot.child(uid).child("email").getValue(String.class);
                 binding.completeName.setText(userName + " " + userSurname);
                 binding.email.setText(email);
+                binding.progressLayout.setVisibility(View.GONE);
             }
 
             @Override
