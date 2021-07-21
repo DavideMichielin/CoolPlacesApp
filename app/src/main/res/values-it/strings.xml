@@ -33,4 +33,8 @@
     <string name="uAreHere">Tu sei qui</string>
     <string name="passwordUpdated">Password aggiornata</string>
     <string name="wrongPassword">Password errata. Riprovare.</string>
+    <string name="insertReview">Inserisci una recensione per il monumento</string>
+    <string name="emptyNotAllowed">La recensione è vuota</string>
+    <string name="emptyListReview">Non ci sono recensioni! Scrivine una tu!</string>
+    <string name="reviewUploaded">Recensione caricata</string>
 </resources>
