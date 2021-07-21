@@ -37,4 +37,5 @@
     <string name="emptyNotAllowed">La recensione è vuota</string>
     <string name="emptyListReview">Non ci sono recensioni! Scrivine una tu!</string>
     <string name="reviewUploaded">Recensione caricata</string>
+    <string name="notSamePassword">Le password non devono essere uguali</string>
 </resources>

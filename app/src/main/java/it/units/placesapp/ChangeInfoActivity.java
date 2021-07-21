@@ -74,7 +74,9 @@ public class ChangeInfoActivity extends AppCompatActivity {
             String password = newPassword.getText().toString();
             if (password.length() < 6) {
                 Toast.makeText(ChangeInfoActivity.this, R.string.shortPassword, Toast.LENGTH_LONG).show();
-            } else {
+            } else if(verify.equals(password)){
+                Toast.makeText(ChangeInfoActivity.this, R.string.notSamePassword, Toast.LENGTH_LONG).show();
+            } else{
                 AuthCredential authCredential = EmailAuthProvider.getCredential(Objects.requireNonNull(user.getEmail()), verify);
                 user.reauthenticate(authCredential).addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
