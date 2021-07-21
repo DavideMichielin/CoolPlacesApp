@@ -57,7 +57,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:iss_title_background="@android:color/transparent"
-                android:background="@drawable/monuments_icons"
                 />
 
             <ImageButton
@@ -103,7 +102,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.4"
+        android:layout_weight="0.8"
         >
         <TextView
             android:layout_width="match_parent"

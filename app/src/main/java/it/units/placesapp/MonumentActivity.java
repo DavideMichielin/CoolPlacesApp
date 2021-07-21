@@ -106,6 +106,9 @@ public class MonumentActivity extends AppCompatActivity {
                     slider.add(new SlideModel(m.getImageUrl(), "", ScaleTypes.CENTER_INSIDE));
                 }
                 binding.imageMonument.setImageList(slider, ScaleTypes.FIT);
+                if(slider.size() == 0){
+                    binding.imageMonument.setBackgroundResource(R.drawable.monuments_icons);
+                }
             }
 
             @Override
