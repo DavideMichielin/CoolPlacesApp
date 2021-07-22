@@ -13,9 +13,12 @@
         android:roundIcon="@mipmap/launcher_icons_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Placesapp">
-        <activity android:name=".UploadReviewActivity"></activity>
-        <activity android:name=".UploadImageActivity" />
-        <activity android:name=".ChangeInfoActivity" />
+        <activity android:name=".UploadReviewActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".UploadImageActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ChangeInfoActivity"
+            android:screenOrientation="portrait"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

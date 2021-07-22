@@ -107,7 +107,7 @@ public class MonumentActivity extends AppCompatActivity {
                 }
                 binding.imageMonument.setImageList(slider, ScaleTypes.FIT);
                 if(slider.size() == 0){
-                    binding.imageMonument.setBackgroundResource(R.drawable.monuments_icons);
+                    binding.imageMonument.setBackgroundResource(R.drawable.background_places_no);
                 }
             }
 

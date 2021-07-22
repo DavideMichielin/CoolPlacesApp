@@ -4,4 +4,5 @@
     <color name="blue_secondary">#1C90ED</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="whitecomments">#F4EEE4</color>
 </resources>

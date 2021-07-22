@@ -38,7 +38,7 @@
     <string name="wrongPassword">Wrong old password. Please retry</string>
     <string name="insertReview">Insert your review for this monument</string>
     <string name="emptyNotAllowed">Empty review are not allowed</string>
-    <string name="emptyListReview">No review yet! Write once!</string>
+    <string name="emptyListReview">No review yet! Write one! If you are not logged, log in to leave a comment!</string>
     <string name="reviewUploaded">Review uploaded</string>
     <string name="notSamePassword">Password must not be the same</string>
 </resources>

@@ -50,6 +50,7 @@ public class UploadReviewActivity extends AppCompatActivity {
             data.put("review", review);
             FirebaseDatabase.getInstance().getReference("review").child(saveLatitude + "_" + saveLongitude).push().setValue(data);
             binding.reviewField.getText().clear();
+            finish();
             Toast.makeText(UploadReviewActivity.this, R.string.reviewUploaded, Toast.LENGTH_LONG).show();
         }
     };
