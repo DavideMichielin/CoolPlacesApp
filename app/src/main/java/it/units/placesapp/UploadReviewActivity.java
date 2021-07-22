@@ -40,8 +40,9 @@ public class UploadReviewActivity extends AppCompatActivity {
     View.OnClickListener backOnButtonListener = v -> finish();
 
     View.OnClickListener postNewReviewListener = v -> {
-        final String review = binding.reviewField.getText().toString();
-        if (review.isEmpty()) {
+        String review = binding.reviewField.getText().toString();
+        review=review.replace("\\\\n", "");
+        if (review.trim().isEmpty()) {
             Toast.makeText(UploadReviewActivity.this, R.string.emptyNotAllowed, Toast.LENGTH_LONG).show();
         } else {
             HashMap<String, String> data = new HashMap<>();
