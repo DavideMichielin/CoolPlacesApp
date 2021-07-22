@@ -35,7 +35,7 @@
     <string name="wrongPassword">Password errata. Riprovare.</string>
     <string name="insertReview">Inserisci una recensione per il monumento</string>
     <string name="emptyNotAllowed">La recensione è vuota</string>
-    <string name="emptyListReview">Non ci sono recensioni! Scrivine una tu!</string>
+    <string name="emptyListReview">Non ci sono recensioni! Scrivine una tu! Se non sei loggato, fallo e scrivi una recensione!</string>
     <string name="reviewUploaded">Recensione caricata</string>
     <string name="notSamePassword">Le password non devono essere uguali</string>
 </resources>
